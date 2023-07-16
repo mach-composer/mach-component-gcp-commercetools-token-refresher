@@ -23,7 +23,7 @@ components:
 - name: ct-refresher
   source: git::https://github.com/mach-composer/mach-component-gcp-commercetools-token-refresher.git//function
   version: <git hash of version you want to release>
-  integrations: ["aws", "commercetools", "sentry"]
+  integrations: ["gcp", "commercetools", "sentry"]
 ```
 
 Other components must configure their commercetools secrets with a reference to this refresher.
