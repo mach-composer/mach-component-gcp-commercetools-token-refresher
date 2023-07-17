@@ -28,3 +28,27 @@ variable "secrets" {
   type        = map(string)
   description = "Map of secret values. Will be put in the key vault."
 }
+
+# commercetools
+variable "ct_project_key" {
+  type = string
+}
+
+variable "ct_api_url" {
+  type        = string
+  description = "commercetools API URL."
+}
+
+variable "ct_auth_url" {
+  type        = string
+  description = "commercetools Auth URL."
+}
+
+variable "ct_stores" {
+  type = map(object({
+    key       = string
+    variables = map(string)
+    secrets   = map(string)
+  }))
+  default = {}
+}
