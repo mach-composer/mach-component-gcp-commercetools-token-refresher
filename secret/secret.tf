@@ -12,6 +12,8 @@ data "google_service_account" "default" {
 resource "google_secret_manager_secret" "credentials" {
   secret_id = "${var.site}-${var.name}-ct-credentials"
 
+  labels = var.labels
+
   replication {
     automatic = true
   }
@@ -28,6 +30,8 @@ resource "google_secret_manager_secret_version" "credentials" {
 
 resource "google_secret_manager_secret" "token" {
   secret_id = "${var.site}-${var.name}-ct-access-token"
+
+  labels = var.labels
 
   replication {
     automatic = true
