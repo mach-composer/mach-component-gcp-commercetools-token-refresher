@@ -15,7 +15,7 @@ data "archive_file" "function_zip" {
 
 resource "google_storage_bucket" "function_bucket" {
   name     = "${var.site}-ctp-token-rotator"
-  location = local.location
+  location = data.google_client_config.current.region
 
   labels = {
     function = "${var.site}-ctp-token-rotator"
