@@ -61,7 +61,7 @@ const readCredentials = async (secretId) => {
 const getAccessToken = async (credentials) => {
   const tokenData = new URLSearchParams();
   tokenData.append("grant_type", "client_credentials");
-  tokenData.append("scope", credentials.clientScopes);
+  tokenData.append("scope", credentials.clientScopes.join(" "));
 
   const authHeader = `Basic ${Buffer.from(
     `${credentials.clientId}:${credentials.clientSecret}`
