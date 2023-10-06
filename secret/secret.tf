@@ -15,7 +15,7 @@ resource "google_secret_manager_secret" "credentials" {
   labels = var.labels
 
   replication {
-    automatic = true
+    auto {}
   }
 }
 
@@ -34,7 +34,7 @@ resource "google_secret_manager_secret" "token" {
   labels = var.labels
 
   replication {
-    automatic = true
+    auto {}
   }
 
   rotation {
